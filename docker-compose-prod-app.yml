@@ -1,0 +1,17 @@
+version: "3"
+services:
+  shopify-app:
+    container_name: shopify-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SHOPIFY_API_KEY: ${SHOPIFY_API_KEY}
+    ports:
+      - "443:443"
+    env_file:
+      - .env
+    volumes:
+      - /var/tmp:/cert
+    image: [AccountId].dkr.ecr.eu-central-1.amazonaws.com/[AppNameLower]-prod/shopify-app:latest
