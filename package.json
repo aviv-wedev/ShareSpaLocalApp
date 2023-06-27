@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "scripts": {
-    "dev": "sleep 5 && nodemon ./dist/index.js",
+    "dev": "sleep 5 && nodemon .",
     "watch-ts": "rm -rf dist && tsc -w",
     "build": "tsc",
     "start": "npm run build && node ."
